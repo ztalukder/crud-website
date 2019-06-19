@@ -1,0 +1,10 @@
+<h1>Hero Encyclopedia</h1>
+
+<form action="/update/{{.Index}}" method="POST">
+	<input type="text" name="Name" value="{{.Hero.Name}}"><br>
+	<input type="text" name="SuperheroName" value="{{.Hero.SuperheroName}}"><br>
+	<input type="text" name="From" value="{{.Hero.From}}"><br>
+	<input type="text" name="Power" value="{{.Hero.Power}}"><br>
+	<input type="submit" value="Update Hero">
+
+</form>

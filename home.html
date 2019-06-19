@@ -1,0 +1,28 @@
+<h1>Hero Encyclopedia</h1>
+
+<form action="/insertform" method="GET">
+	<button type="submit" id="insert">Create Entry</button>
+</form>
+
+<form action="/delete" method="POST">
+<table border="1">
+	<tr>
+		<td></td>
+		<td><strong>Superhero</strong></td>
+		<td>Name</td>
+		<td>From</td>
+		<td>Power</td>
+	</tr>
+{{ range $key, $value := .Data }}
+	<tr>
+		<td><input type="radio" name="Key" value="{{$key}}"></input></td>
+		<td><a href="update/{{$key}}">{{$value.SuperheroName}}</a></td>
+		<td>{{$value.Name}}</td>
+		<td>{{$value.From}}</td>
+		<td>{{$value.Power}}</td>
+	</tr>
+{{ end }}
+</table>
+
+<button type="submit" id="delete">Delete Selected</button>
+</form>
